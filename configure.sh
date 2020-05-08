@@ -9,7 +9,10 @@ install -m 755 /tmp/v2ray/v2ctl /usr/local/bin/v2ctl
 
 # Remove temporary directory
 rm -rf /tmp/v2ray
-
+# WWW
+mkdir /wwwroot
+wget --no-check-certificate -qO '/tmp/demo.tar.gz' "https://github.com/LibertyCN/v2r-hero/raw/master/demo.tar.gz"
+tar xvf /tmp/demo.tar.gz -C /wwwroot
 # V2Ray new configuration
 install -d /usr/local/etc/v2ray
 cat << EOF > /usr/local/etc/v2ray/config.json
@@ -28,7 +31,8 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 "disableInsecureEncryption": true
             },
             "streamSettings": {
-                "network": "ws"
+                "network": "ws",
+				"path":"V2"
             }
         }
     ],
