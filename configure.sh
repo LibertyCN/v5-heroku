@@ -27,10 +27,8 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                 ],
                 "disableInsecureEncryption": true
             },
-        "streamSettings":{
-            "network":"ws",
-            "wsSettings":{
-                "path":"/hero"
+            "streamSettings": {
+                "network": "ws"
             }
         }
     ],
